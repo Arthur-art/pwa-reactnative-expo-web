@@ -1,1 +1,1 @@
-# pwa-reactnative-expo-web
+# Nesse vídeo é ensinado uma técnica para desenvolver o seu PWA a partir do aplicativo mobile escrito com React Native, ou seja, conseguimos produzir um aplicativo para iOS, Android e PWA ao mesmo tempo.
