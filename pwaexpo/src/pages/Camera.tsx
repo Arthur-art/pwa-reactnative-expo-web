@@ -52,6 +52,7 @@ const styles = StyleSheet.create({
           flexDirection: 'row',
           marginBottom: 5,
           borderRadius: 10,
+          height: "100%"
         },
     camera:{
         display: 'flex',
