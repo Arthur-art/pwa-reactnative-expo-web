@@ -1,7 +1,7 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from '@react-navigation/native';
 import { Camera } from "./pages/Camera";
-import { Main } from "./pages/main";
+import { Main } from "./pages/Main";
 import {Feather} from "@expo/vector-icons";
 
 const Tab = createBottomTabNavigator();

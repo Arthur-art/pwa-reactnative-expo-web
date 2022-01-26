@@ -1,9 +1,17 @@
 import { useEffect, useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { FlatList, Image, StyleSheet, Text, View } from 'react-native';
+
+interface Member{
+    id: number;
+    name: string;
+    image: string;
+    avatar_url: string;
+    login: string;
+}
 
 export function Main() {
 
-const [members, setMembers] = useState([]);
+const [members, setMembers] = useState<Member[]>([]);
 
 useEffect(()=>{
     fetch("https://api.github.com/orgs/rocketseat/members").then(resp => {
@@ -13,20 +21,30 @@ useEffect(()=>{
     })
 },[])
 
-console.log(members)
-
   return (
-    <View style={styles.container}>
-        <Text>Main</Text>
-    </View>
+    <FlatList
+        contentContainerStyle={{padding: 4}}
+        data={members}
+        keyExtractor={member => String(member.id)}
+        renderItem={({item: member}) => (
+            <View style={styles.container}>
+                <Image style={styles.img} source={{uri: member.avatar_url}}/>
+                <Text style={{fontSize: 35}}>{member.login}</Text>
+            </View>
+        )}
+    />
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+  img: {
+    width: 50,
+    height: 50,
   },
+  container:{
+        display: 'flex',
+        flexDirection: 'row',
+        marginBottom: 5,
+        borderRadius: 10,
+      }
 });
