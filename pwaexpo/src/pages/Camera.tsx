@@ -34,7 +34,6 @@ export  function Camera() {
                   : ExpoCamera.Constants.Type.back
               );
             }}>
-            <Text style={styles.container}> Flip </Text>
           </TouchableOpacity>
         </View>
       </ExpoCamera>
